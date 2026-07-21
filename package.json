@@ -1,13 +1,13 @@
 {
-  "name": "nodejs_mongod",
+  "name": "course-management-rest-api",
   "version": "1.0.0",
-  "description": "",
-  "main": "firstApi.js",
+  "description": "RESTful Course Management API built with Node.js, Express, MongoDB, JWT, and Mongoose.",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Mojtaba Ahmadi",
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
