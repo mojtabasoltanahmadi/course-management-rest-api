@@ -1,10 +1,10 @@
 const express = require('express')
 
-const checkRole = require('../../midllewars/checkRole')
+const checkRole = require('../../middlewares/checkRole')
 const controller = require('../../controllers/v1/course')
 const multer = require('multer')
 const uploader = require('../../utils/uploader') // config for multer constructor
-const checkId = require('../../midllewars/checkId')
+const checkId = require('../../middlewares/checkId')
 const sessionValidator = require('../../utils/sessionConfig')
 const courseValidator = require('../../utils/courseConfig')
 

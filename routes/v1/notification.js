@@ -1,7 +1,7 @@
 const express = require('express')
 
 const controller = require('../../controllers/v1/notification')
-const checkId  = require('../../midllewars/checkId')
+const checkId = require('../../middlewares/checkId')
 
 const router = new express.Router()
 
@@ -16,8 +16,8 @@ router
 
 
 router
-.route('/')
-.get(controller.getNotification)
+    .route('/')
+    .get(controller.getNotification)
 
 
 

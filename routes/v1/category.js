@@ -1,7 +1,7 @@
 const express = require('express')
-const checkId = require('../../midllewars/checkId')
+const checkId = require('../../middlewares/checkId')
 const controller = require("../../controllers/v1/category")
-// const controller = require("../../midllewars/checkRole")
+// const controller = require("../../middlewares/checkRole")
 
 const router = new express.Router()
 

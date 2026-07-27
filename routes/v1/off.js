@@ -1,7 +1,7 @@
 const express = require('express')
 
 const controller = require('../../controllers/v1/off')
-const checkRole = require('../../midllewars/checkRole')
+const checkRole = require('../../middlewares/checkRole')
 
 const router = new express.Router()
 

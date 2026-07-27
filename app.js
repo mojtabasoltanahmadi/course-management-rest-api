@@ -16,8 +16,8 @@ const offRouter = require('./routes/v1/off')
 
 
 
-const checkJwtToken = require('./midllewars/checkJwtToken')
-const isItJwtToken = require('./midllewars/isItJwtToken')
+const checkJwtToken = require('./middlewares/checkJwtToken')
+const isItJwtToken = require('./middlewares/isItJwtToken')
 
 require('dotenv').config()
 require('./config/dbConnection')
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // const upload = require('multer')
 // ({dest : `C:/Users/pc/Desktop/vsc/to browes/public/avatar`})
-// const upload = require('./midllewars/multer')
+// const upload = require('./middlewares/multer')
 
 
 // app.post('/upload', upload.single('avatar'), (req, res) => {

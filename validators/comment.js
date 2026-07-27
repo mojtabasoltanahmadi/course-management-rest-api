@@ -30,5 +30,5 @@ const schema = {
 
 module.exports = v.compile(schema)
 
-console.log(schema);
+// console.log(schema);
 
