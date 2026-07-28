@@ -2,9 +2,9 @@ const sessionValidator = require('../validators/session')
 
 
 module.exports = function (req, file, cb) {
-   
-    if(req.body.free === "true")
-    req.body.free = true;
+
+    if (req.body.free === "true")
+        req.body.free = true;
 
 
     const check = sessionValidator(req.body)

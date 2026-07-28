@@ -38,6 +38,10 @@ module.exports.checkVerifiedToken = (req, res, next) => {
 module.exports.userValidatorCheck = (req, res, next) => {
     const checked = userValidator(req.body)
 
+    // console.log(checked, req.body);
+    // if(!req.body) //or if (Object.keys(req.body).length === 0) 
+        // return res.status(422).json("Please complete the request body first")
+
     if (checked !== true)
         return res.status(422).json(checked);
 
@@ -141,7 +145,7 @@ module.exports.hashedPassword = (req, res, next) => {
 
 
 module.exports.createAccessToken = (req, res, next) => {
-    const accessToken = jwt.sign({ _id: res._user._id }, process.env.JWT_SECRET, { expiresIn: '3s' })
+    const accessToken = jwt.sign({ _id: res._user._id }, process.env?.JWT_SECRET, { expiresIn: '10d' })
     res.a_ccessToken = accessToken;
     next();
 }

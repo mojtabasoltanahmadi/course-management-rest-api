@@ -13,7 +13,7 @@ const contactUsRouter = require('./routes/v1/contactUs')
 const searchRouter = require('./routes/v1/search')
 const notificationRouter = require('./routes/v1/notification')
 const offRouter = require('./routes/v1/off')
-
+const articleRouter = require('./routes/v1/article')
 
 
 const checkJwtToken = require('./middlewares/checkJwtToken')
@@ -46,7 +46,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.use(express.static())
 
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 4444;
 
 
 
@@ -99,10 +99,9 @@ app.use('/v1/contact-us', contactUsRouter)
 app.use('/v1/search', searchRouter)
 app.use('/v1/notification', checkJwtToken, notificationRouter)
 app.use('/v1/off', checkJwtToken, offRouter)
-
-
-const articleRouter = require('./routes/v1/article')
 app.use('/v1/article', articleRouter)
+
+
 
 
 
@@ -118,7 +117,6 @@ app.use('/v1/article', articleRouter)
 
 
 // handel server err
-
 app.use((err, req, res, next) => {
     try {
         err.message = JSON.parse(err.message)
