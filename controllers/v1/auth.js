@@ -11,7 +11,7 @@ require('dotenv').config()
 
 module.exports.checkVerifiedToken = (req, res, next) => {
     // if(res.v_erifiedToken)
-    res.json({message : "user "})
+    res.json({ message: "user " })
 }
 
 // const userRouter = require('../../routes/v1/auth')
@@ -40,7 +40,7 @@ module.exports.userValidatorCheck = (req, res, next) => {
 
     // console.log(checked, req.body);
     // if(!req.body) //or if (Object.keys(req.body).length === 0) 
-        // return res.status(422).json("Please complete the request body first")
+    // return res.status(422).json("Please complete the request body first")
 
     if (checked !== true)
         return res.status(422).json(checked);
@@ -145,7 +145,11 @@ module.exports.hashedPassword = async (req, res, next) => {
 
 
 module.exports.createAccessToken = (req, res, next) => {
-    const accessToken = jwt.sign({ _id: res._user._id }, process.env?.JWT_SECRET, { expiresIn: '10d' })
+    const accessToken = jwt.sign(
+        { _id: res._user._id },
+        process.env?.JWT_SECRET,
+        { expiresIn: '10d' }
+    );
     res.a_ccessToken = accessToken;
     next();
 }
