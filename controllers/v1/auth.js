@@ -138,8 +138,8 @@ module.exports.getMe = (req, res) => {
 
 }
 
-module.exports.hashedPassword = (req, res, next) => {
-    req.body.password = bcrypt.hashSync(req.body.password, 10);
+module.exports.hashedPassword = async (req, res, next) => {
+    req.body.password = await bcrypt.hash(req.body.password, 10);
     next();
 }
 
